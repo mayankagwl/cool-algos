@@ -1,5 +1,4 @@
 # Python program for implementation of Insertion Sort
-
 # Function to do insertion sort
 
 
