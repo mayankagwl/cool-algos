@@ -16,8 +16,7 @@ int getMax(int arr[], int n)
     for (int i = 1; i < n; i++) {
     	
     	if (arr[i] > mx) 
-            mx = arr[i]; 
-            
+            mx = arr[i];             
 	}
         
     return mx; 
@@ -28,22 +27,24 @@ void print(int arr[], int n)
 { 
     for (int i = 0; i < n; i++) {
     	cout << arr[i] << " "; 
-	}
-        
+	}        
 } 
   
 //countSort Implementing
 void countSort(int arr[], int n, int exp) 
 { 
-	 // output sorted array 
+  // output array stores the required sorted array 
     int output[n];
     int i, count[10] = {0}; 
   
-    // Storing the count of occurrences in count[]  array
-    for (i = 0; i < n; i++) 
+    // Storing the count of occurrences of each element digits in count[]  array
+    for (i = 0; i < n; i++) {
+	// here counting digits if each elements 		    
         count[ (arr[i]/exp)%10 ]++; 
-  
-    // Change count[i] so that count[i] 
+    }	    
+	    
+     // Change count[i] so that count[i] now contains actual
+    //  position of this digit in output[]
     for (i = 1; i < 10; i++) 
         count[i] += count[i - 1]; 
   
@@ -69,7 +70,11 @@ void radix_sort(int arr[], int n)
     // here m stores the maximum element of the array  
     int m = getMax(arr, n); 
   
-  
+   //if m = 3 then exp values are 1 so elements are sorted on basis of unit place digits
+   //if m = 32 then exp values are 1, 10 so elements are sorted on basis of unit and tens place digits
+   //if m = 329 then exp values are 1, 10, 100	so ements are sorted on basis of unit, tens and hundreds  place digits	
+   //if m = 3299 then exp values are 1, 10, 100, 1000 so lements are sorted on basis of unit, tens , hundreds  and thousands place digits	
+   		
     for (int exp = 1; m/exp > 0; exp *= 10) 
         countSort(arr, n, exp); 
 } 
