@@ -72,8 +72,8 @@ void radix_sort(int arr[], int n)
   
    //if m = 3 then exp values are 1 so elements are sorted on basis of unit place digits
    //if m = 32 then exp values are 1, 10 so elements are sorted on basis of unit and tens place digits
-   //if m = 329 then exp values are 1, 10, 100	so ements are sorted on basis of unit, tens and hundreds  place digits	
-   //if m = 3299 then exp values are 1, 10, 100, 1000 so lements are sorted on basis of unit, tens , hundreds  and thousands place digits	
+   //if m = 329 then exp values are 1, 10, 100	so elements are sorted on basis of unit, tens and hundreds  place digits	
+   //if m = 3299 then exp values are 1, 10, 100, 1000 so elments are sorted on basis of unit, tens , hundreds  and thousands place digits	
    		
     for (int exp = 1; m/exp > 0; exp *= 10) 
         countSort(arr, n, exp); 
