@@ -7,7 +7,7 @@
 */
 
 module.exports = {
-  quickSort : (arr, left, right) => {
+  quickSort: (arr, left, right) => {
     let pivot, partitionIndex;
 
     if (left < right) {
@@ -19,7 +19,7 @@ module.exports = {
       quickSort(arr, partitionIndex + 1, right);
     }
     return arr;
-  }
+  },
 };
 
 /**
@@ -27,7 +27,8 @@ module.exports = {
  * left and larger than pivot value to the right
  */
 function partition(arr, pivot, left, right) {
-  let pivotValue = arr[pivot], partitionIndex = left;
+  let pivotValue = arr[pivot],
+    partitionIndex = left;
 
   for (let i = left; i < right; i++) {
     if (arr[i] < pivotValue) {
